@@ -1,0 +1,20 @@
+# pip install requests
+
+import requests  # importing requests
+from time import *  # importing time to s
+
+city = input("Enter your city name: ")  # taking input from user which is name of city
+print("please wait... we are working on it")
+
+sleep(2)  # we need delay for 2 seconds after the printing
+
+print("\nDisplaying Weather report for your city: " + city)  # we need to indicate that soon
+# we are displaying the report
+
+sleep(1)  # we need sleep for a while
+
+url = 'https://wttr.in/{}'.format(city)  # here we are adding our link in url variable with
+# respect to our city name
+res = requests.get(url)  # now here we are using requests module to fetch the data from wttr api
+
+print(res.text)  # now simply printing the report which is fetched by requests
